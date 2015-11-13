@@ -1,0 +1,213 @@
+//
+//  Prefix header
+//
+//  The contents of this file are implicitly included at the beginning of every source file.
+//
+
+#import <Availability.h>
+
+#ifndef __IPHONE_3_0
+#warning "This project uses features only available in iOS SDK 3.0 and later."
+#endif
+
+#ifdef __OBJC__
+    #import <UIKit/UIKit.h>
+    #import <Foundation/Foundation.h>
+#endif
+
+
+
+//-----------------------------------------------
+#import "HomePage_ViewController.h"
+
+#define SCREEN_HEIGHT [UIScreen mainScreen].bounds.size.height
+
+#define _Is_En_Language ([[NSLocale preferredLanguages][0] isEqualToString:@"en"] ? YES:NO)
+#define _App_Key @"tracker_ios"
+#define _App_Secret @"123456789abcdef"
+#define _Verson @"2.0.0"
+
+//method参数
+#define _Interface_user_login @"user.login"                                 //1. 登录
+#define _Interface_tracker_bind @"tracker.bind"                             //2. 绑定设备
+#define _Interface_tracker_unbind @"tracker.unbind"                         //3. 解绑设备
+#define _Interface_tracker_my @"tracker.my"                                 //4. 查看绑定设备列表
+#define _Interface_tracker_care @"tracker.care"                             //5. 增加关爱设备
+#define _Interface_tracker_clearcare @"tracker.clearcare"                   //6. 解除关爱设备
+#define _Interface_tracker_mycare @"tracker.mycare"                         //7. 查看关爱设备列表
+#define _Interface_tracker_single @"tracker.single"                         //8. 单次点名请求接口
+#define _Interface_user_sendvcode @"user.sendvcode"                         //9. 发送验证码
+#define _Interface_user_checkvcode @"user.checkvcode"                       //10. 检查验证码
+#define _Interface_user_setpassword @"user.setpassword"                     //11. 设置密码
+#define _Interface_user_changepassword @"user.changepassword"               //12. 修改密码
+#define _Interface_user_updateinfo @"user.updateinfo"                       //13. 修改用户信息
+#define _Interface_user_resetpassword @"user.resetpassword"                 //14. 重置密码
+#define _Interface_user_rebindmobile @"user.rebindmobile"                   //15. 重新绑定手机号
+#define _Interface_user_feedback @"user.feedback"                           //16. 用户意见反馈
+#define _Interface_tracker_ebikebattery @"tracker.ebikebattery"             //17. 电动车电量显示
+#define _Interface_user_registerbyemail @"user.registerbyemail"             //18. 邮箱注册接口
+#define _Interface_user_resetpasswordbyemail @"user.resetpasswordbyemail"   //19. 邮箱重置密码
+#define _Interface_user_logout @"user.logout"                               //20. 退出登录
+#define _Interface_tracker_addfence @"tracker.addfence"                     //21. 设置围栏接口
+#define _Interface_tracker_removefence @"tracker.removefence"               //22. 取消围栏接口
+#define _Interface_tracker_getfences @"tracker.getfences"                   //23.查看围栏列表
+#define _Interface_user_getuploadfiletoken @"user.getuploadfiletoken"       //24.申请文件上传令牌
+
+
+//序号越小颜色越深
+#define _Color_font1 [UIColor colorWithRed:146/255.0 green:79/255.0 blue:1/255.0 alpha:1]       //导航栏字体颜色
+#define _Color_font2 [UIColor colorWithRed:150/255.0 green:100/255.0 blue:65/255.0 alpha:1]     //缺省字体颜色
+#define _Color_background [UIColor colorWithRed:1 green:1 blue:234/255.0 alpha:1]               //背景色
+
+#define _Avatar_width 2
+
+//显示加载View
+#define _Code_ShowLoading                                                                       \
+MBProgressHUD *HUD = (MBProgressHUD *)[self.navigationController.view viewWithTag:199];     \
+if (HUD == nil) {                                                                           \
+HUD = [[MBProgressHUD alloc] initWithView:self.navigationController.view];              \
+HUD.color = [UIColor colorWithRed:0.5 green:0.5 blue:0.5 alpha:0.5];                    \
+HUD.tag = 199;                                                                          \
+[self.navigationController.view addSubview:HUD];                                        \
+}                                                                                           \
+[HUD show:YES];
+
+//隐藏加载View
+#define _Code_HiddenLoading                                                                     \
+MBProgressHUD *HUD = (MBProgressHUD *)[self.navigationController.view viewWithTag:199];     \
+[HUD hide:YES];
+
+//导航栏返回按钮
+#define _Method_SetBackButton(backCode, isCustom)                                                                           \
+-(void)setBackButton {                                                                                                  \
+UIButton *backButton = [UIButton buttonWithType:UIButtonTypeCustom];                                                \
+backButton.frame = CGRectMake(0, 2, 45, 44);                                                                        \
+[backButton setImage:[UIImage imageNamed:@"01_btn_nav_back"] forState:UIControlStateNormal];                        \
+[backButton setImage:[UIImage imageNamed:@"01_btn_nav_back_selected"] forState:UIControlStateHighlighted];          \
+[backButton addTarget:self action:@selector(onBackButtonPressed) forControlEvents:UIControlEventTouchUpInside];     \
+backButton.imageEdgeInsets = (UIEdgeInsets){0,-18,0,18};                                                            \
+self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:backButton];                    \
+}                                                                                                                       \
+-(void)onBackButtonPressed {                                                                                            \
+if (isCustom) {                                                                                                     \
+backCode;                                                                                                       \
+} else {                                                                                                            \
+[self.navigationController popViewControllerAnimated:YES];                                                      \
+}}
+
+//计算字符串宽度
+#define _StringWidth(str) [str boundingRectWithSize:CGSizeMake(0, 16) options: NSStringDrawingTruncatesLastVisibleLine | NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading attributes:@{NSFontAttributeName: [UIFont systemFontOfSize:14]} context:nil].size.width;
+
+//导航栏提交按钮
+#define _Method_SetSubmitButton(buttonTitle, SEL, stringWidth)                                                                       \
+-(void)setSubmitButton {                                                                                            \
+CGFloat strW = stringWidth;     \
+UIButton *submitButton = [UIButton buttonWithType:UIButtonTypeCustom];                                              \
+submitButton.frame = CGRectMake(0, 2, strW+12, 44);                                                       \
+[submitButton setImage:[UIImage imageNamed:@"01_btn_nav"] forState:UIControlStateNormal];                       \
+[submitButton setImage:[UIImage imageNamed:@"01_btn_nav_selected"] forState:UIControlStateHighlighted];         \
+[submitButton addTarget:self action:SEL forControlEvents:UIControlEventTouchUpInside];                          \
+submitButton.imageEdgeInsets = (UIEdgeInsets){0,16,0,-16};                                                      \
+\
+UILabel *lb = [[UILabel alloc] initWithFrame:CGRectMake(18, 0, strW+12, 45)];                             \
+lb.text = buttonTitle;                                                                                          \
+lb.textAlignment = NSTextAlignmentCenter;                                                                       \
+lb.font = [UIFont boldSystemFontOfSize:14];                                                                     \
+lb.textColor = _Color_font1;                                                                                    \
+[submitButton addSubview:lb];                                                                                   \
+\
+self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:submitButton];             \
+}
+
+
+
+//textField事件
+#define _Method_textFieldEvent(textFieldArray)                                                  \
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {                           \
+for(UITextField *tf in textFieldArray) {                                                \
+[tf resignFirstResponder];                                                          \
+}}                                                                                           \
+-(void)textFieldDidBeginEditing:(UITextField *)textField {                                  \
+[textField setBackground:[UIImage imageNamed:@"02_textField_long_selected"]];           \
+}                                                                                           \
+-(void)textFieldDidEndEditing:(UITextField *)textField {                                    \
+[textField setBackground:[UIImage imageNamed:@"02_textField_long"]];                    \
+}                                                                                           \
+-(BOOL)textFieldShouldReturn:(UITextField *)textField {                                     \
+[textField resignFirstResponder];                                                       \
+return YES;                                                                             \
+}
+
+//HTTP响应校验
+#define _Code_HTTPResponseCheck(dic, code)                                                                                                      \
+if (dic == nil) {                                                                                                                           \
+CustomIOS7AlertView *alertView = [[CustomIOS7AlertView alloc] initStyleZeroWithTitle:NSLocalizedString(@"提示", nil) message:NSLocalizedString(@"连接失败", nil)];                        \
+[alertView show];                                                                                                                       \
+return;                                                                                                                                 \
+}                                                                                                                                           \
+int error = [dic[@"error"] intValue];                                                                                                       \
+if (error == 0) {                                                                                                                           \
+NSLog(@"操作成功！");                                                                                                                     \
+code;                                                                                                                                   \
+} else if (error == 27) {                                                                                                                   \
+CustomIOS7AlertView *alertView = [[CustomIOS7AlertView alloc] initStyleZeroWithTitle:NSLocalizedString(@"提示", nil) message:NSLocalizedString(@"帐号已下线，请重新登录", nil)];             \
+[alertView setOnButtonTouchUpInside:^(CustomIOS7AlertView *alertView, int buttonIndex) {                                                \
+[[UserData Instance] logoff];                                                                                                       \
+[[NSUserDefaults standardUserDefaults] setObject:@"" forKey:@"AccountUid"];\
+HomePage_ViewController *homePageVC = [[HomePage_ViewController alloc] initWithNibName:@"HomePage_ViewController" bundle:nil];\
+[self.navigationController setViewControllers:[NSArray arrayWithObject:homePageVC] animated:YES];                                                                    \
+}];                                                                                                                                     \
+[alertView show];                                                                                                                       \
+} else {                                                                                                                                    \
+NSArray *subErrors = dic[@"subErrors"];                                                                                                 \
+if (error == 15 && subErrors) {                                                                                                         \
+if (subErrors[0][@"message"]) {     \
+    NSString *message = subErrors[0][@"message"];   \
+    NSRange range = [message rangeOfString:@"已被使用"];  \
+    NSRange range1 = [message rangeOfString:@"不存在"];  \
+if (range1.location != NSNotFound){ \
+    message = [message substringFromIndex:3];   \
+    message = [message substringToIndex:message.length-4];  \
+    message = [NSString stringWithFormat:NSLocalizedString(@"设备 %@ 不存在", nil), message];    \
+} else if (range.location != NSNotFound){ \
+    message = [message substringFromIndex:3];   \
+    message = [message substringToIndex:message.length-14];  \
+    message = [NSString stringWithFormat:NSLocalizedString(@"邮箱 %@ 已被使用，请换其它邮箱注册", nil), message];    \
+} else { \
+    if ([message hasPrefix:@"邮箱"] && [message hasSuffix:@"未注册"]) {  \
+        message = [message substringFromIndex:3];   \
+        message = [message substringToIndex:message.length-4];  \
+        message = [NSString stringWithFormat:NSLocalizedString(@"邮箱 %@ 未注册", nil), message];    \
+    } else {    \
+        message = NSLocalizedString(message, nil);  \
+    }       \
+} \
+    CustomIOS7AlertView *alertView = [[CustomIOS7AlertView alloc] initStyleZeroWithTitle:NSLocalizedString(@"提示", nil) message:NSLocalizedString(message, nil)];    \
+    [alertView show];   \
+} else {    \
+    CustomIOS7AlertView *alertView = [[CustomIOS7AlertView alloc] initStyleZeroWithTitle:NSLocalizedString(@"提示", nil) message:NSLocalizedString(@"操作失败", nil)];    \
+    [alertView show];   \
+}}\
+ else if (error == 10) {    \
+    CustomIOS7AlertView *alertView = [[CustomIOS7AlertView alloc] initStyleZeroWithTitle:NSLocalizedString(@"提示", nil) message:NSLocalizedString(dic[@"message"], nil)];    \
+    [alertView show];   \
+} else {                                                                                                                                  \
+CustomIOS7AlertView *alertView = [[CustomIOS7AlertView alloc] initStyleZeroWithTitle:NSLocalizedString(@"提示", nil) message:dic[@"message"]];               \
+[alertView show];                                                                                                                   \
+}}
+
+#define _Method_RequestFailed(code)                                      \
+- (void)requestFailed:(ASIHTTPRequest *)request {       \
+_Code_HiddenLoading                                      \
+CustomIOS7AlertView *alertView = [[CustomIOS7AlertView alloc] initStyleZeroWithTitle:NSLocalizedString(@"提示", nil) message:NSLocalizedString([request error].localizedDescription, nil)];                                      \
+[alertView show];                                      \
+NSLog(@"HttpRequest Error > ________%@\n\n______________url=%@\n\n______________%@\n", self, [request url] , [request error]);                                      \
+    code;   \
+}
+
+
+#if DEBUG
+#else
+#define NSLog(...) {}
+#endif
+

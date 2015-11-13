@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6250" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomePage_ViewController">
+            <connections>
+                <outlet property="AdImageView" destination="BHz-Kl-Cdx" id="DpF-IF-6sm"/>
+                <outlet property="aroundButton" destination="g6d-io-vAc" id="7tn-NT-0tc"/>
+                <outlet property="devElectricityLabel" destination="FMD-7N-OcS" id="UMF-j2-Ocl"/>
+                <outlet property="loginButton" destination="dcp-bu-uXP" id="XIb-Da-QXr"/>
+                <outlet property="registerButton" destination="qHf-YI-Y16" id="w0g-v3-z6S"/>
+                <outlet property="remoteButton" destination="wrJ-ZY-cRx" id="crc-yM-0Jg"/>
+                <outlet property="view" destination="Yh5-lb-xaK" id="BqD-fd-h1U"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="Yh5-lb-xaK">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="01_status_bar" translatesAutoresizingMaskIntoConstraints="NO" id="zRa-RW-3eB">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="20"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="01_nav_background_90" translatesAutoresizingMaskIntoConstraints="NO" id="3x1-Oe-mwN">
+                    <rect key="frame" x="0.0" y="20" width="320" height="60"/>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dcp-bu-uXP">
+                    <rect key="frame" x="0.0" y="20" width="60" height="60"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <inset key="titleEdgeInsets" minX="0.0" minY="35" maxX="0.0" maxY="0.0"/>
+                    <state key="normal" title="登录" backgroundImage="01_btn_login">
+                        <color key="titleColor" red="0.59607845540000004" green="0.40784317260000003" blue="0.25098040700000002" alpha="1" colorSpace="deviceRGB"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <state key="highlighted" backgroundImage="01_btn_login_selected"/>
+                    <connections>
+                        <action selector="onLoginButtonPressed:" destination="-1" eventType="touchUpInside" id="FEa-xB-Ie7"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qHf-YI-Y16">
+                    <rect key="frame" x="68" y="20" width="60" height="60"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <inset key="titleEdgeInsets" minX="0.0" minY="35" maxX="0.0" maxY="0.0"/>
+                    <state key="normal" title="注册" backgroundImage="01_btn_register">
+                        <color key="titleColor" red="0.59607845540000004" green="0.40784317260000003" blue="0.25098040700000002" alpha="1" colorSpace="deviceRGB"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <state key="highlighted" backgroundImage="01_btn_register_selected"/>
+                    <connections>
+                        <action selector="onRegisterButtonPressed:" destination="-1" eventType="touchUpInside" id="UBK-vo-VAl"/>
+                    </connections>
+                </button>
+                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Cjo-HW-BNk">
+                    <rect key="frame" x="0.0" y="221" width="320" height="69"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GtW-iB-6fe">
+                            <rect key="frame" x="29" y="15" width="262" height="46"/>
+                            <state key="normal" image="01_btn_addDevice">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <state key="highlighted" image="01_btn_addDevice_selected"/>
+                            <connections>
+                                <action selector="onStartCareButtonPressed:" destination="-1" eventType="touchUpInside" id="JCg-P0-aXo"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                </view>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="01_img_Ad" translatesAutoresizingMaskIntoConstraints="NO" id="BHz-Kl-Cdx">
+                    <rect key="frame" x="0.0" y="290" width="320" height="80"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="01_btn_bottom_line_background" translatesAutoresizingMaskIntoConstraints="NO" id="n50-R1-SSh">
+                    <rect key="frame" x="0.0" y="369" width="320" height="12"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="01_btn_bottom_line_selected" translatesAutoresizingMaskIntoConstraints="NO" id="2as-If-mJ8">
+                    <rect key="frame" x="29" y="369" width="66" height="12"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="01_homepage_background" translatesAutoresizingMaskIntoConstraints="NO" id="3C8-uD-o9b">
+                    <rect key="frame" x="0.0" y="388" width="320" height="180"/>
+                </imageView>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="远程看护" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pwd-3Z-3do">
+                    <rect key="frame" x="126" y="497" width="68" height="21"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
+                    <color key="textColor" red="0.59950972579999995" green="0.38728890780000003" blue="0.21867322010000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="在身边" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZEV-JI-X52">
+                    <rect key="frame" x="224" y="497" width="68" height="21"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
+                    <color key="textColor" red="0.59950972579999995" green="0.38728890780000003" blue="0.21867322010000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="消息中心" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nKE-Nz-WGW">
+                    <rect key="frame" x="27" y="497" width="68" height="21"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
+                    <color key="textColor" red="0.59950972579999995" green="0.38728890780000003" blue="0.21867322010000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wrJ-ZY-cRx">
+                    <rect key="frame" x="115" y="410" width="88" height="88"/>
+                    <state key="normal" image="01_btn_bottom_remoteCare">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="onRemoteCareButtonPressed:" destination="-1" eventType="touchUpInside" id="wq7-Az-5t2"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g6d-io-vAc">
+                    <rect key="frame" x="214" y="410" width="88" height="88"/>
+                    <state key="normal" image="01_btn_bottom_around">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="onAroundButtonPressed:" destination="-1" eventType="touchUpInside" id="OXX-n8-16T"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bTK-Kx-ova">
+                    <rect key="frame" x="17" y="410" width="88" height="88"/>
+                    <state key="normal" image="01_btn_bottom_messageCenter">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="onMessageCenterButtonPressed:" destination="-1" eventType="touchUpInside" id="IZk-re-ya1"/>
+                    </connections>
+                </button>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="当前设备电量：80%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FMD-7N-OcS">
+                    <rect key="frame" x="60" y="535" width="200" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <color key="textColor" red="0.57710597826086962" green="0.32783612926565647" blue="0.1800882586437228" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="0.99215692280000001" blue="0.93333339689999995" alpha="1" colorSpace="deviceRGB"/>
+            <point key="canvasLocation" x="67" y="76"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="01_btn_addDevice" width="556" height="100"/>
+        <image name="01_btn_addDevice_selected" width="556" height="100"/>
+        <image name="01_btn_bottom_around" width="146" height="150"/>
+        <image name="01_btn_bottom_line_background" width="520" height="22"/>
+        <image name="01_btn_bottom_line_selected" width="120" height="22"/>
+        <image name="01_btn_bottom_messageCenter" width="146" height="153"/>
+        <image name="01_btn_bottom_remoteCare" width="146" height="150"/>
+        <image name="01_btn_login" width="120" height="120"/>
+        <image name="01_btn_login_selected" width="120" height="120"/>
+        <image name="01_btn_register" width="120" height="120"/>
+        <image name="01_btn_register_selected" width="120" height="120"/>
+        <image name="01_homepage_background" width="640" height="360"/>
+        <image name="01_img_Ad" width="640" height="160"/>
+        <image name="01_nav_background_90" width="640" height="120"/>
+        <image name="01_status_bar" width="640" height="46"/>
+    </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>

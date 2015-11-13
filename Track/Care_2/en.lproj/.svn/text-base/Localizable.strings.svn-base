@@ -1,0 +1,193 @@
+/* 
+  Localizable.strings
+  Care_2
+
+  Created by JIA on 14-8-11.
+  Copyright (c) 2014年 Joe. All rights reserved.
+*/
+
+//---------------------
+//未用上
+
+//---------------------
+//UI上
+"恭喜您成功注册乐卡帐号。"="Congratulations,You Onemeter account has been registered successfully.";
+"您的乐卡号为："="Your Onemeter account is:";
+"您可以使用您的邮箱进行登录！"="You can use email address to login.";
+"返回登录页面"="Back to the login page.";
+"拍照"="Take Photo";
+"选择本地图片"="Select loc";
+"已读"="Read";
+"请输入6-16位密码，不能包含特殊字符"="Pls. enter passwrod with 6-16 digits, no special characters";
+"围栏"="Fencing";
+"制定看护时长"="Set Care duration";
+"关爱对象"="Care object";
+"关爱距离"="Care distance";
+
+//---------------------
+/* 缺少
+ 
+ HTTP请求返回
+ 1. 邮箱 %@ 已被使用，请换其他邮箱注册
+ */
+"邮箱 %@ 已被使用，请换其它邮箱注册"="The mailbox %@ is already in use, please change to other registered mail.";
+
+"该邮箱已被使用，请换其他邮箱注册"="The mailbox is already in use, please change to other registered mail.";
+"请先选择/添加设备"="Please select/add equipment";
+"操作失败"="Operation failed";
+"帐号已下线，请重新登录"="The account has been off the assembly line, please re login";
+"连接失败"="Connection failed";
+"A connection failure occurred"="A connection failure occurred";
+"请输入大于100的关爱距离"="Please enter more than 100 care distance";
+
+
+"%@电量不足，请及时充电 \n设备号：%@，电量：%d"="%@ battery low, pls. recharge \nDevice No.%@, battery:%d";
+"您的宠物已经超出%d米的关爱范围啦，赶快去找找它吧"="Your pet is beyond %d distance, pls. go and find it.";
+"已有版本："="Existing Version:";
+"只能是1-8个汉字、字母、数字、或随意组合"="Only 1-20 characters or alphanums or combine random.";
+"感谢您对乐卡提出宝贵的意见。"="Thanks for your advice to Onemeter.";
+"没有更多的历史记录了"="No more records";
+"消息记录"="Message Logging";
+"获取位置"="Get Position";
+"取消定位"="Cancel Positioning";
+"地图查看"="Map checking";
+"消息详情"="Message Detail";
+
+
+"当前距离%d米的范围"="Current distance is %dM.";
+//----
+"当前距离  "="Current distance is ";
+"米范围"="M.";
+"预设"="Preset";
+
+
+"星期一"= "Monday";
+"星期二"= "Tuesday";
+"星期三"= "Wednesday";
+"星期四"= "Thursday";
+"星期五"= "Friday";
+"星期六"= "Saturday";
+"星期天"= "Sunday";
+
+"     预警距离%d米" = "  Warning distance %d meters";
+"当前设备电量：%d%%" = "Current device power:%d%%";
+"乐卡关爱" = "iCare";
+"登录"="Login";
+"下一步" = "Next";
+"两次密码输入不一致，请重新输入" = "Enter wrong password twice, pls. retry.";
+"个人信息" = "Personal Info";
+"亲，您还没将定位功能打开哟，赶紧打开吧！" = "Dear, You haven’t turned on positioning feature, pls. turn on quickly";
+"低电量提醒" = "Low battery alarm";
+"使用已有的乐卡帐号" = "Use the existing Onemeter account";
+"保存" = "Save";
+"保存成功" = "Saved";
+"修改密码" = "Change password";
+"修改成功" = "Changed successfully";
+"修改昵称" = "Change nickname";
+"关于一米" = "About Onemeter";
+"删除当前设备，乐卡平台将不能提供服务" = "Delete the current device, Onemeter won’t provide service";
+"删除设备" = "Delete device";
+"删除" = "Delete";
+"历史记录" = "Historical data";
+"发布" = "Publish";
+"在身边" = "Nearby";
+"地图" = "Map";
+"头像" = "Profile photo";
+"密码由6-16位数字、字母组成，不可包含空格和特殊字符" = "The password requires 6-16 alphanumeric, not include space & special characters";
+"密码重置邮件发送成功，请到邮箱验证后登录" = "We have sent a password resetting email, pls. login after verifying.";
+"忘记密码" = "Forgot password";
+"性别" = "Gender";
+"您还没有关爱的对象哦，点击右上角可以添加关爱" = "You have no care object, click the top-right corner to add.";
+"您还没有添加设备哦" = "You haven’t added device.";
+"您还没有输入反馈意见" = "You haven’t entered feedbacks.";
+"您还没有选择铃声" = "You haven’t chosen the ring.";
+"意见反馈" = "Feedback";
+"我的设备" = "My device";
+"手机号码格式不正确，请输入正确的手机号码" = "Wrong format, pls. enter right phone No.";
+"提交成功" = "Submitted successfully";
+"提示：设置时间越短，位置显示的实时性越强！" = "Alert: The setting time is shorter, the location is more accurate.";
+"提醒" = "Remind";
+"昵称" = "Nickname";
+"昵称不能为空" = "Nickname cannot be empty.";
+"未填写" = "Not filled";
+"未搜寻到设备所在位置" = "Not  searched the device location";
+"欢迎使用关爱APP，时刻关爱您的宠物" = "Welcome to Care App, Care about your pets anytime.";
+"欢迎页" = "Welcome page";
+"正在定位，请稍等" = "positioning, pls. wait a moment.";
+"此功能暂未开放" = "The feature is unopened.";
+"没有找到音乐" = "Unfound music";
+"注册协议" = "Registration agreement";
+"注册乐卡帐号" = "Register Account";
+"消息中心" = "Message center";
+"用户名不能为空" = "User name cann’t be empty";
+"请输入邮箱名" ="Please enter the e-mail name";
+"电量低于30%%以下提醒充电" = "Remind to recharge when battery lower 30%";
+"男" = "Male";
+"女" = "Female";
+"确定" = "Confirm";
+"绑定电话号码" = "Bind phone NO.";
+"编辑" = "Edit";
+"记录位置" = "Record";
+"记录成功" = "Record successfully";
+"设备IMEI号" = "Device IMEI NO.";
+"请填写设备IMEI号" = "Pls. enter device IMEI No.";
+"设备名称" = "Device name";
+"设备定义" = "Device definition";
+"设备手机号" = "Device phone No.";
+"请填写设备名" = "Pls. fill in device name";
+"请确认是否已经阅读《一米注册协议》" = "Pls. make sure whether read Onemeter users registration agreement or not";
+"请输入你的手机号" = "Pls. enter your phone No.";
+"请输入当前密码" = "Pls. enter current password";
+"请输入新密码" = "Pls. enter new password";
+"请输入确认密码" = "Pls. enter confirming password";
+"请输入密码" = "Pls. enter password";
+"请输入设备IMEI号：" = "Pls. enter device IMEI No.";
+"请输入设备手机号" = "Pls. enter device phone No.";
+"请输入邮箱名" = "Pls. enter email address";
+"帐号" = "Account";
+"乐卡帐号" = "Onemeter account";
+"远程看护" = "Remote supervision";
+"退出登录" = "Log out";
+"退出乐卡将接收不到乐卡的服务，您确定？" = "Are you sure to logout?";
+"选择身边的对象" = "Select object nearby";
+"选择铃声" = "Select the ring";
+"邮箱格式不正确" = "Wrong email address ";
+"安全与隐私" = "Security and privacy";
+"预警声音" = "Warning sound";
+"取消" = "Cancel";
+"我" = "Me";
+"提示" = "Alerts";
+"提交" = "Submit";
+"无" = "No";
+"版本更新" = "Version update";
+"预设%d米范围" = "Preset %d meter distance";
+"要取消对 %@ 的关爱吗？" = "Cancel caring about %@ or not";
+"要取消对 %@ 的预警吗？" = "Cancel warning about %@ or not";
+"用户名或密码错误，请检查用户名和密码." = "Email Address or password is incorrect, please check.";
+"服务不可用" = "Service not available";
+"未注册" = "is not registered";
+"邮箱 " = "The mailbox";
+"邮箱 %@ 未注册" = "The mailbox %@ is not registered";
+"邮箱  未注册" = "The mailbox is  not registered";
+"加载中..."="Loading...";
+"请输入15位的IMEI号"="Please enter 15 digit IMEI number";
+"只能输入9位或11位数字"="Can only enter 9 digit or 11 digit	";
+
+"您还没有设置昵称"="You have not set up a nickname";
+"设备 %@ 不存在"="Device %@ not exist";
+
+
+"为中心，半径"=" As the center, radius of ";
+"米"=" M ";
+"进入预警"="Into warning";
+"离开预警"="Off warning";
+"请输入大于200米且小于5000米的关爱距离" = "Pls enter warming distance within 200 meters to 5000 meters!";
+"围栏区域还未设置" = "Fence area has not set yet";
+"围栏范围重复" = "Fence range overlapped";
+"开启关爱成功" = "Open care success";
+"密码错误"="Password error";
+"抱歉，未找到结果!" = "Sorry, no result!";
+"设备电量:" = "Device Power:";
+"扫描二维码或条形码" = "Scan";
+"将二维码图像置于矩形方框内，离手机摄像头10CM左右，系统会自动识别" = "The qr code image on rectangular box, from mobile phone camera 10 cm, the system will automatically identify";
+//"扫描的内容格式不正确!" = "Scan the content format is not correct!";
